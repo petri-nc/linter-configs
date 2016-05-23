@@ -1,0 +1,269 @@
+env:
+  browser: true
+  es6: true
+  jquery: true
+globals:
+  nc: true
+extends: 'eslint:recommended'
+parserOptions:
+  sourceType: module
+rules:
+  array-bracket-spacing:
+    - warn
+    - never
+  block-scoped-var: warn # or off?
+  brace-style:
+    - warn
+    - 1tbs
+    - allowSingleLine: true # TODO possible error
+  camelcase: warn # TODO check with json etc content from python...
+  comma-dangle: # TODO Remove once rid of IE8
+    - error
+    - never
+  comma-style: off # TODO change to "last" and error
+  consistent-return: off
+  consistent-this:
+    - warn
+    - that
+  curly:
+    - error
+    - all
+  dot-notation:
+    - warn
+    - allowKeywords: true
+  eol-last: warn
+  eqeqeq:
+    - warn
+    - smart
+  func-names: off # Helpful in debugging, but coming up with names is hard.
+  func-style:
+    - off
+    - declaration
+  guard-for-in: off
+  indent:
+    - off # our way of not tabbing the namespacing IIFE breaks this rule.
+    - tab
+  key-spacing:
+    - warn
+    - beforeColon: false
+      afterColon: true
+  linebreak-style:
+    - error
+    - unix
+  max-len:
+    - warn
+    - 80
+  max-nested-callbacks:
+    - warn
+    - 3
+  max-params:
+    - warn
+    - 5
+  new-cap: error
+  newline-after-var: warn
+
+  no-alert: off
+  no-array-constructor: error
+  no-bitwise: warn
+  no-case-declarations: warn
+  no-console: warn
+  no-constant-condition: warn
+  no-empty: warn
+  no-eq-null: warn
+  no-eval: warn
+  no-extra-boolean-cast: warn
+  no-extra-semi: warn
+  no-fallthrough: warn
+  no-floating-decimal: warn
+  no-implicit-coercion:
+    - warn
+    - string: false
+      allow:
+        - '!!'
+  no-irregular-whitespace: error
+  no-lone-blocks: warn
+  no-loop-func: off # TODO Might be better as warning
+  no-mixed-spaces-and-tabs:
+    - warn
+    - smart-tabs
+  no-multi-spaces: warn
+  no-multi-str: error
+  no-multiple-empty-lines:
+    - warn
+    - max: 2
+  no-nested-ternary: error
+  no-new-func: error
+  no-obj-calls: error
+  no-octal: error
+  no-redeclare:
+    - error
+    - builtinGlobals: true
+  no-return-assign:
+    - error
+    - always
+  no-self-assign: warn
+  no-self-compare: error
+  no-sequences: error
+  no-shadow: warn
+  no-sparse-arrays: warn
+  no-throw-literal: warn
+  no-trailing-spaces: warn
+  no-underscore-dangle: off
+  no-unexpected-multiline: error
+  no-unneeded-ternary: warn
+  no-unused-expressions:
+    - warn
+    - allowShortCircuit: true
+  no-unused-vars:
+    - warn
+    - vars: all
+      args: after-used
+  no-unreachable: error
+  no-warning-comments:
+    - warn
+    - terms:
+        - fixme
+      location: start
+  object-curly-spacing:
+    - warn
+    - never
+  one-var:
+    - warn
+    - always
+  operator-linebreak:
+    - warn
+    - after
+  quote-props:
+    - warn
+    - as-needed
+  quotes:
+    - off
+    - single
+  semi:
+    - warn
+    - always # change to -never?
+  semi-spacing:
+    - error
+    - before: false
+      after: true
+  space-before-blocks:
+    - warn
+    - always
+  space-before-function-paren: # TODO check
+    - warn
+    - anonymous: always
+      named: never
+  space-in-parens:
+    - warn
+    - never
+  use-isnan: warn
+  valid-jsdoc: warn # TODO exceptions etc
+  valid-typeof: warn
+
+
+  # Filling in with some common defaults from
+  # https://gist.github.com/alefteris/39c9cfe3a6baa9fc5acf
+  # If we decide to keep these, replace the 0,1,2 with off,warn,error
+
+  # Possible Errors
+  no-cond-assign: 2
+  no-control-regex: 2
+  no-debugger: 2
+  no-dupe-args: 2
+  no-dupe-keys: 2
+  no-duplicate-case: 2
+  no-empty-character-class: 2
+  no-ex-assign: 2
+  no-extra-parens: 0
+  no-func-assign: 2
+  no-inner-declarations:
+    - 2
+    - functions
+  no-invalid-regexp: 2
+  no-negated-in-lhs: 2
+  no-regex-spaces: 2
+
+  # Best Practices
+  complexity:
+    - 0
+    - 11
+  default-case: 0
+  no-caller: 2
+  no-div-regex: 0
+  no-else-return: 0
+  no-extend-native: 2
+  no-extra-bind: 2
+  no-implied-eval: 2
+  no-iterator: 2
+  no-labels: 2
+  no-native-reassign: 2
+  no-new-wrappers: 2
+  no-new: 2
+  no-octal-escape: 2
+  no-param-reassign: 0
+  no-process-env: 0
+  no-proto: 2
+  no-void: 0
+  no-with: 2
+  radix: 0
+  vars-on-top: 0
+  wrap-iife: 0
+  yoda:
+    - 2
+    - never
+
+  # Variables
+  no-catch-shadow: 2
+  no-delete-var: 2
+  no-label-var: 2
+  no-shadow-restricted-names: 2
+  no-undef-init: 2
+  no-undef: 2
+  no-undefined: 0
+
+  # Node.js
+  handle-callback-err: 0
+  no-mixed-requires:
+    - 0
+    - false
+  no-new-require: 0
+  no-path-concat: 0
+  no-process-exit: 2
+  no-restricted-modules: 0
+  no-sync: 0
+
+  # Stylistic Issues
+  comma-spacing: 2
+  new-parens: 2
+  no-continue: 0
+  no-inline-comments: 0
+  no-lonely-if: 0
+  no-new-object: 2
+  no-spaced-func: 2
+  no-ternary: 0
+  operator-assignment:
+    - 0
+    - always
+  padded-blocks: 0
+  sort-vars: 0
+  space-infix-ops: 2
+  space-unary-ops:
+    - 2
+    - words: true
+      nonwords: false
+  wrap-regex: 0
+
+  # ECMAScript 6
+  generator-star-spacing: 0
+  generator-star: 0 # DEPRECATED
+  no-var: 0
+  object-shorthand: 0
+
+  # Legacy
+  max-depth:
+    - 0
+    - 4
+  max-statements:
+    - 0
+    - 1
+  no-plusplus: 0
